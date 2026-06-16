@@ -1,0 +1,35 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.header{
+     width: 1200px;
+     margin: 0px auto;
+     padding: 10px 0;
+     display: flex;
+     justify-content: space-between;
+}
+
+.img_logo{
+    width: 117px;
+}
+
+.menu{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    height: 100%;
+}
+
+.item_menu{
+    color: rgb(91, 208, 91);
+    font-size: 18px;
+    font-weight: 700;
+    transition: 0.5s;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
