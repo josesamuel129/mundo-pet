@@ -1,50 +1,340 @@
-<!doctype html>
-<html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-BR">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mundo pet</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Pet</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        /* =======================
+   BASE
+======================= */
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0f0f10;
+            color: white;
+        }
+
+        /* =======================
+   HEADER LIMPO
+======================= */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            background: #ff2fb3;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #000;
+        }
+
+        .icons i {
+            margin-left: 12px;
+            cursor: pointer;
+        }
+
+        /* =======================
+   LAYOUT LIMPO
+======================= */
+        .container {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* =======================
+   SIDEBAR NORMAL
+======================= */
+        .sidebar {
+            background: #1a1a1d;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 10px 25px rgba(255, 47, 179, 0.2);
+        }
+
+        .sidebar h3 {
+            color: #ff2fb3;
+        }
+
+        .sidebar li {
+            list-style: none;
+            padding: 10px 0;
+            cursor: pointer;
+        }
+
+        .sidebar li:hover {
+            color: #ff2fb3;
+        }
+
+        /* =======================
+   HERO LIMPO
+======================= */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            background: #1a1a1d;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(255, 47, 179, 0.2);
+        }
+
+        .hero-text h1 {
+            font-size: 34px;
+            color: #ff2fb3;
+        }
+
+        .hero-text p {
+            opacity: 0.8;
+            margin-top: 10px;
+        }
+
+        .hero button {
+            margin-top: 15px;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 30px;
+            background: #ff2fb3;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .hero img {
+            width: 260px;
+            border-radius: 20px;
+        }
+
+        /* =======================
+   SERVIÇOS LIMPOS
+======================= */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: #1a1a1d;
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #ff2fb3;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* =======================
+   PRODUTOS LIMPOS
+======================= */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .product {
+            background: #1a1a1d;
+            border-radius: 20px;
+            padding: 15px;
+            border: 1px solid #ff2fb3;
+        }
+
+        .product img {
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        .product button {
+            width: 100%;
+            margin-top: 10px;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            background: #ff2fb3;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* =======================
+   FOOTER LIMPO
+======================= */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #ff2fb3;
+            color: #000;
+            margin-top: 30px;
+        }
+
+        /* =======================
+   RESPONSIVO
+======================= */
+
+        /* TABLET */
+        @media (max-width:900px) {
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .services {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        /* CELULAR */
+        @media (max-width:600px) {
+
+            nav {
+                display: none;
+            }
+
+            .services {
+                grid-template-columns: 1fr;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero img {
+                width: 180px;
+            }
+
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+        }
+    </style>
 </head>
 
 <body>
 
     <header>
-        <figure>
-            <img src="./img/mundo pet img.jpg" alt="mundo pet" class="img_logo">
-        </figure>
+
+        <div class="logo">🐾 Mundo Pet </div>
 
         <nav>
-            <ul class="menu">
-                <li class="item_menu">cachorro</li>
-                <li class="item_menu">gato</li>
-                <li class="item_menu">coelho</li>
-                <li class="item_menu">peixe</li>
-                <li class="item_menu">jabuti</li>
-    
-            </ul>
+            <a href="#">Início</a>
+            <a href="#">Produtos</a>
+            <a href="#">Serviços</a>
+            <a href="#">Contato</a>
         </nav>
+
+        <div class="icons">
+            <i class="fa-solid fa-heart"></i>
+            <i class="fa-solid fa-cart-shopping"></i>
+            <i class="fa-solid fa-user"></i>
+        </div>
+
     </header>
-        <section class="info_nav">
-        <ul class="info_nav_pag">
-            <li>ㅤ</li>
-            <li>ㅤ</li>
-            <li>ㅤ</li>
-        </ul>
-    </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <div class="container">
 
-    <div id="carouselExampleIndicators" class="carousel slide">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="./img/cachorro imagem igual de tamanho.jpg" class="d-block w-100" alt="...">
+        <aside class="sidebar">
+            <h3>Categorias</h3>
+            <ul>
+                <li>Cachorros</li>
+                <li>Gatos</li>
+                <li>Aves</li>
+                <li>Peixes</li>
+                <li>Promoções</li>
+            </ul>
+        </aside>
+
+        <main>
+
+            <section class="hero" style="margin-bottom: 2rem;">
+
+                <div class="hero-text">
+                    <h1>Seu pet merece o melhor 💖</h1>
+                    <p>Cuidados, produtos e amor em um só lugar.</p>
+                    <button>Explorar agora</button>
+                </div>
+
+                <img src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?w=800">
+
+            </section>
+
+            <section class="services" style="margin-bottom: 2rem;">
+
+                <div class="card">🩺 Veterinário</div>
+                <div class="card">✂️ Banho</div>
+                <div class="card">🐶 Adestramento</div>
+                <div class="card">❤️ Adoção</div>
+
+            </section>
+
+            <section class="grid" style="margin-bottom: 2rem;">
+
+                <div class="product">
+                    <img src="img/Racao-Whiskas-e-Pedigree.png">
+                    <h3>Ração Premium</h3>
+                    <button>Comprar</button>
+                </div>
+
+                <div class="product">
+                    <img src="img/55dd8393546b2db5f5e0478d81e82221.jpg">
+                    <h3>Brinquedos</h3>
+                    <button>Comprar</button>
+                </div>
+
+                <div class="product">
+                    <img src="img/produtos-banho-a-seco-banner-1.png">
+                    <h3>Higiene</h3>
+                    <button>Comprar</button>
+                </div>
+
+            </section>
+
+        </main>
+
     </div>
+
+    <footer>
+        🐾 Mundo Pet 2026 © Todos os direitos reservados
+    </footer>
+
+</body>
+
+</html>
